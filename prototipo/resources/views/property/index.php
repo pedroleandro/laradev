@@ -16,9 +16,9 @@ if (!empty($properties)) {
 
     foreach ($properties as $property) {
 
-        $linkReadMore = url('/imoveis/' . $property->id);
-        $linkEditItem = url('/imoveis/editar/' . $property->id);
-        $linkRemoveItem = url('/imoveis/remover/' . $property->id);
+        $linkReadMore = url('/imoveis/' . $property->name);
+        $linkEditItem = url('/imoveis/editar/' . $property->name);
+        $linkRemoveItem = url('/imoveis/remover/' . $property->name);
 
         echo "<tr>
                 <td>{$property->title}</td>
