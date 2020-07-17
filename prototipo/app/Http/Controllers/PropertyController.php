@@ -45,6 +45,34 @@ class PropertyController extends Controller
         return redirect()->action('PropertyController@index');
     }
 
+    public function edit($name)
+    {
+        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+
+        if (!empty($property)) {
+            return view('property/edit')->with('properties', $property);
+        } else {
+            return redirect()->action('PropertyController@index');
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $propertySlug = $this->setName($request->title);
+
+        $property = [
+            $request->title,
+            $propertySlug,
+            $request->description,
+            $request->rental_price,
+            $request->sale_price,
+            $id
+        ];
+
+        DB::update("UPDATE properties SET title = ?, name = ?, description = ?, rental_price = ?, sale_price = ? WHERE id = ?", $property);
+        return redirect()->action('PropertyController@index');
+    }
+
     private function setName($title)
     {
         $propertySlug = str_slug($title);

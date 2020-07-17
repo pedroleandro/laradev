@@ -23,3 +23,6 @@ Route::post('/imoveis/store', 'PropertyController@store');
 //Route::get('/imoveis/{id}', 'PropertyController@show');
 Route::get('/imoveis/{name}', 'PropertyController@show');
 
+Route::get('/imoveis/editar/{name}', 'PropertyController@edit');
+Route::put('/imoveis/update/{id}', 'PropertyController@update');
+
