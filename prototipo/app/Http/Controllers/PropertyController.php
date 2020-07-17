@@ -73,6 +73,17 @@ class PropertyController extends Controller
         return redirect()->action('PropertyController@index');
     }
 
+    public function destroy($name)
+    {
+        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+
+        if(!empty($property)){
+            DB::delete("DELETE FROM properties WHERE name = ?", [$name]);
+        }
+
+        return redirect()->action('PropertyController@index');
+    }
+
     private function setName($title)
     {
         $propertySlug = str_slug($title);
