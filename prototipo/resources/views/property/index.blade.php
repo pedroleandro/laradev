@@ -2,37 +2,39 @@
 
 @section('content')
 
-<h1>Listagem de Produtos</h1>
+    <div class="container my-3">
+        <h1>Listagem de Produtos</h1>
 
-<?php
+        <?php
 
-if (!empty($properties)) {
+        if (!empty($properties)) {
 
-    echo "<table>";
-    echo "<tr>
+            echo "<table class='table table-striped table-hover'>";
+            echo "<thead class='bg-primary text-white'>
             <td>Título</td>
             <td>Valor de Aluguel</td>
             <td>Valor de Compra</td>
             <td>Ações</td>
-          </tr>";
+          </thead>";
 
-    foreach ($properties as $property) {
+            foreach ($properties as $property) {
 
-        $linkReadMore = url('/imoveis/' . $property->name);
-        $linkEditItem = url('/imoveis/editar/' . $property->name);
-        $linkRemoveItem = url('/imoveis/remover/' . $property->name);
+                $linkReadMore = url('/imoveis/' . $property->name);
+                $linkEditItem = url('/imoveis/editar/' . $property->name);
+                $linkRemoveItem = url('/imoveis/remover/' . $property->name);
 
-        echo "<tr>
+                echo "<tr>
                 <td>{$property->title}</td>
                 <td>R$ " . number_format($property->rental_price, 2, ",", ".") . "</td>
                 <td>R$ " . number_format($property->sale_price, 2, ",", ".") . "</td>
                 <td><a href='{$linkReadMore}'>Ver mais</a> | <a href='{$linkEditItem}'>Editar</a> | <a href='{$linkRemoveItem}'>Remover</a></td>
               </tr>";
 //        var_dump($property);
-    }
+            }
 
-    echo "</table>";
-}
-?>
+            echo "</table>";
+        }
+        ?>
+    </div>
 
 @endsection

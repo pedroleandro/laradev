@@ -106,7 +106,7 @@ class PropertyController extends Controller
 //        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
 
         $property = Property::where('name', $name)->get();
-        if(!empty($property)){
+        if (!empty($property)) {
             DB::delete("DELETE FROM properties WHERE name = ?", [$name]);
         }
 
