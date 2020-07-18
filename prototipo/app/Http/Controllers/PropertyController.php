@@ -4,18 +4,22 @@ namespace LaraDev\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use LaraDev\Property;
 
 class PropertyController extends Controller
 {
     public function index()
     {
-        $properties = DB::select("SELECT * FROM properties");
+//        $properties = DB::select("SELECT * FROM properties");
+        $properties = Property::all();
         return view('property/index')->with('properties', $properties);
     }
 
     public function show($name)
     {
-        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+//        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+
+        $property = Property::where('name', $name)->get();
 
         if (!empty($property)) {
             return view('property/show')->with('properties', $property);
@@ -47,7 +51,9 @@ class PropertyController extends Controller
 
     public function edit($name)
     {
-        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+//        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+
+        $property = Property::where('name', $name)->get();
 
         if (!empty($property)) {
             return view('property/edit')->with('properties', $property);
@@ -75,8 +81,9 @@ class PropertyController extends Controller
 
     public function destroy($name)
     {
-        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
+//        $property = DB::select("SELECT * FROM properties WHERE name = ?", [$name]);
 
+        $property = Property::where('name', $name)->get();
         if(!empty($property)){
             DB::delete("DELETE FROM properties WHERE name = ?", [$name]);
         }
@@ -88,7 +95,9 @@ class PropertyController extends Controller
     {
         $propertySlug = str_slug($title);
 
-        $properties = DB::select("SELECT * FROM properties");
+//        $properties = DB::select("SELECT * FROM properties");
+
+        $properties = Property::all();
 
         $c = 0;
         foreach ($properties as $property) {
