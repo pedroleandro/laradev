@@ -1,3 +1,7 @@
+@extends('property.master')
+
+@section('content')
+
 <h1>Página Single</h1>
 
 <?php
@@ -13,5 +17,6 @@ if(!empty($properties)){
     }
 }
 ?>
+@endsection
 
 
