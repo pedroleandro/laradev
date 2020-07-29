@@ -31,6 +31,10 @@ Route::view('/form', 'form');
  *      caso não exista, o método cria um novo objeto com esses recursos.
  *
  * PATCH: utilizado apenas para atualizar um recurso do objeto.
+ *
+ * DELETE: utilizado para apagar um registro apartir de um recurso
+ *
+ * OPTIONS:
  */
 
 //Route::get($uri, $callback);
@@ -73,3 +77,13 @@ Route::patch('/users/1', 'UserController@patch');
  * MATCH
  */
 Route::match(['put', 'patch'], '/users/2', 'UserController@match');
+
+/**
+ * DELETE
+ */
+Route::delete('/users/1', 'UserController@destroy');
+
+/**
+ * ANY
+ */
+Route::any('/users', 'UserController@any');

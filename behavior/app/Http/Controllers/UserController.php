@@ -39,4 +39,14 @@ class UserController extends Controller
         var_dump($request);
         return "<h1>Disparou ação de MATCH = [PUT/PATCH]</h1>";
     }
+
+    public function destroy()
+    {
+        return "<h1>Disparou ação de DELETE</h1>";
+    }
+
+    public function any()
+    {
+        return "<h1>Disparou ação de ANY</h1>";
+    }
 }

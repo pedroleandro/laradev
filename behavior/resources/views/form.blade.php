@@ -12,10 +12,10 @@
 <body>
 
 <div class="container my-5">
-    <form action="{{ url('/users/2') }}" method="post" autocomplete="off">
+    <form action="{{ url('/users/1') }}" method="post" autocomplete="off">
 
 {{--        <input type="hidden" name="_method" value="put">--}}
-        @method('put')
+        @method('delete')
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
