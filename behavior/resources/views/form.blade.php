@@ -12,7 +12,9 @@
 <body>
 
 <div class="container my-5">
-    <form action="" autocomplete="off">
+    <form action="{{ url('/postData') }}" method="post" autocomplete="off">
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
             <label for="first_name">Primeiro Nome</label>
