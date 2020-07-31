@@ -11,11 +11,16 @@
 |
 */
 
+Route::resourceVerbs([
+    "create" => "novo",
+    "edit" => "editar"
+]);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/form', 'form');
+//Route::view('/form', 'form');
 
 /**
  * Qual o objetivo de cada método:
@@ -55,35 +60,41 @@ Route::view('/form', 'form');
 /**
  * GET
  */
-Route::get('/users/1', 'UserController@index');
-Route::get('/getData', 'UserController@get');
+//Route::get('/users/1', 'UserController@index');
+//Route::get('/getData', 'UserController@get');
 
 /**
  * POST
  */
-Route::post('/getPost', 'UserController@post');
+//Route::post('/getPost', 'UserController@post');
 
 /**
  * PUT
  */
-Route::put('/users/1', 'UserController@put');
+//Route::put('/users/1', 'UserController@put');
 
 /**
  * PATCH
  */
-Route::patch('/users/1', 'UserController@patch');
+//Route::patch('/users/1', 'UserController@patch');
 
 /**
  * MATCH
  */
-Route::match(['put', 'patch'], '/users/2', 'UserController@match');
+//Route::match(['put', 'patch'], '/users/2', 'UserController@match');
 
 /**
  * DELETE
  */
-Route::delete('/users/1', 'UserController@destroy');
+//Route::delete('/users/1', 'UserController@destroy');
 
 /**
  * ANY
  */
-Route::any('/users', 'UserController@any');
+//Route::any('/users', 'UserController@any');
+
+Route::get('posts/premium', 'PostController@premium');
+//Route::resource('posts', 'PostController');
+//Route::resource('posts', 'PostController')->only(['index', 'show']);
+Route::resource('posts', 'PostController')->except(['destroy']);
+//Route::get('posts', 'PostController@index');
