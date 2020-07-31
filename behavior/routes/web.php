@@ -11,10 +11,10 @@
 |
 */
 
-Route::resourceVerbs([
-    "create" => "novo",
-    "edit" => "editar"
-]);
+//Route::resourceVerbs([
+//    "create" => "novo",
+//    "edit" => "editar"
+//]);
 
 Route::get('/', function () {
     return view('welcome');
@@ -93,8 +93,33 @@ Route::get('/', function () {
  */
 //Route::any('/users', 'UserController@any');
 
-Route::get('posts/premium', 'PostController@premium');
+//Route::get('posts/premium', 'PostController@premium');
 //Route::resource('posts', 'PostController');
 //Route::resource('posts', 'PostController')->only(['index', 'show']);
-Route::resource('posts', 'PostController')->except(['destroy']);
+//Route::resource('posts', 'PostController')->except(['destroy']);
 //Route::get('posts', 'PostController@index');
+
+//Route::get('/users', 'UserController@show');
+
+Route::get('/users', function () {
+    echo "<h1>Listagem dos usuarios do meu site!</h1>";
+});
+
+Route::view('/form', 'form');
+
+/**
+ * helper para fazer o tratamento de erros com fallback.
+ *
+ * o ideal é criar um controllador com métodos específicos para
+ * fazer cada tipo de tratamento de erro.
+ */
+
+Route::fallback(function (){
+    echo "<h1>Whooops! 404 :: Nenhum registro encontrado!</h1>";
+});
+
+//Route::redirect(uri, url, code);
+Route::redirect('/usuarios/novo', url('/form'), 301);
+
+Route::get('/posts', 'PostController@index')->name('posts.index');
+Route::get('/posts/index', 'PostController@indexRedirect')->name('posts.indexRedirect');

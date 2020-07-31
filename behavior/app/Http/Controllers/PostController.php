@@ -21,6 +21,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function indexRedirect()
+    {
+        return redirect()->route('posts.index');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         echo "<h1>Listagem dos artigos do meu site!</h1>";
