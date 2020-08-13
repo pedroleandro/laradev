@@ -49,4 +49,10 @@ class UserController extends Controller
     {
         return "<h1>Disparou ação de ANY</h1>";
     }
+
+    public function comments(Request $request, $id, $comment = null)
+    {
+        echo "<h1>UserController@comments</h1>";
+        var_dump($id, $comment,$request);
+    }
 }
