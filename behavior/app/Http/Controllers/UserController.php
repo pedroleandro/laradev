@@ -3,6 +3,7 @@
 namespace LaraDev\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class UserController extends Controller
 {
@@ -53,6 +54,19 @@ class UserController extends Controller
     public function comments(Request $request, $id, $comment = null)
     {
         echo "<h1>UserController@comments</h1>";
-        var_dump($id, $comment,$request);
+        var_dump($id, $comment, $request);
+    }
+
+    public function inspect()
+    {
+        $route = Route::current();
+        $name = Route::currentRouteName();
+        $action = Route::currentRouteAction();
+
+        var_dump(
+            $route,
+            $name,
+            $action
+        );
     }
 }

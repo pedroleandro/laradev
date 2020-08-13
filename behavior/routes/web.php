@@ -147,3 +147,5 @@ Route::get('/users/{id}/comments/{comment?}', 'UserController@comments')->where(
         'comment' => '[a-zA-Z0-9]+'
     ]
 );
+
+Route::get('/users/1', 'UserController@inspect')->name('inspect');
