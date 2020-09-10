@@ -101,11 +101,11 @@ Route::get('/', function () {
 
 //Route::get('/users', 'UserController@show');
 
-Route::get('/users', function () {
-    echo "<h1>Listagem dos usuarios do meu site!</h1>";
-});
+//Route::get('/users', function () {
+//    echo "<h1>Listagem dos usuarios do meu site!</h1>";
+//});
 
-Route::view('/form', 'form');
+//Route::view('/form', 'form');
 
 /**
  * helper para fazer o tratamento de erros com fallback.
@@ -114,12 +114,69 @@ Route::view('/form', 'form');
  * fazer cada tipo de tratamento de erro.
  */
 
-Route::fallback(function (){
-    echo "<h1>Whooops! 404 :: Nenhum registro encontrado!</h1>";
-});
+//Route::fallback(function () {
+//    echo "<h1>Whooops! 404 :: Nenhum registro encontrado!</h1>";
+//});
 
 //Route::redirect(uri, url, code);
-Route::redirect('/usuarios/novo', url('/form'), 301);
+//Route::redirect('/usuarios/novo', url('/form'), 301);
 
-Route::get('/posts', 'PostController@index')->name('posts.index');
-Route::get('/posts/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
+//Route::get('/posts', 'PostController@index')->name('posts.index');
+//Route::get('/posts/index', 'PostController@indexRedirect')->name('posts.indexRedirect');
+
+//Route::get('/users/{id}/comments/{comment}', function ($id, $comment){
+//    var_dump($id, $comment);
+//});
+
+//Route::get('/users/{id}/comments/{comment?}', function ($id, $comment = null){
+//    var_dump($id, $comment);
+//})->where('id', '[0-9]+');
+
+//Route::get('/users/{id}/comments/{comment?}', function ($id, $comment = null){
+//    var_dump($id, $comment);
+//})->where(
+//    [
+//        'id' => '[0-9]+',
+//        'comment' => '[a-zA-Z0-9]+'
+//    ]
+//);
+
+//Route::get('/users/{id}/comments/{comment?}', 'UserController@comments')->where(
+//    [
+//        'id' => '[0-9]+',
+//        'comment' => '[a-zA-Z0-9]+'
+//    ]
+//);
+
+//Route::get('/users/1', 'UserController@inspect')->name('inspect');
+
+//Route::prefix('admin')->group(function () {
+//    Route::view('/form', 'form');
+//});
+
+//Route::name('posts.')->group(function () {
+//    Route::get('/admin/posts/index', 'PostController@index')->name('index');
+//    Route::get('/admin/posts', 'PostController@show')->name('show');
+//});
+
+//Route::middleware(['throttle:10,1'])->group(function () {
+//    Route::view('/form', 'form');
+//});
+
+//Route::namespace('Admin')->group(function () {
+//    Route::get('/users', 'UserController@index');
+//});
+
+Route::group(
+    [
+        'namespace' => 'Admin',
+        'prefix' => 'admin',
+        'middleware' => [
+            'throttle:10,1'
+        ],
+        'as' => 'admin.'
+    ],
+    function (){
+        Route::resource('users', 'UserController');
+    }
+);
