@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1061b6-5ab0-434d-811e-830bbf3e320b" name="Default Changelist" comment="controle de migrações">
-      <change afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+    <list default="true" id="ce1061b6-5ab0-434d-811e-830bbf3e320b" name="Default Changelist" comment="criando a primeira seeder">
+      <change afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +184,7 @@
       <workItem from="1599613454043" duration="725000" />
       <workItem from="1599759026255" duration="2174000" />
       <workItem from="1599761484473" duration="3873000" />
-      <workItem from="1599772449913" duration="2424000" />
+      <workItem from="1599772449913" duration="4258000" />
     </task>
     <task id="LOCAL-00001" summary="criando a primeira migration">
       <created>1599761372206</created>
@@ -227,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599776143461</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="criando a primeira seeder">
+      <created>1599776838323</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1599776838323</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,17 +260,18 @@
     <MESSAGE value="relacionamentos" />
     <MESSAGE value="inserindo usuário de administrador" />
     <MESSAGE value="controle de migrações" />
-    <option name="LAST_COMMIT_MESSAGE" value="controle de migrações" />
+    <MESSAGE value="criando a primeira seeder" />
+    <option name="LAST_COMMIT_MESSAGE" value="criando a primeira seeder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="492" y="280" width="372" height="241" key="#Composer" timestamp="1599613502160">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="492" y="280" width="372" height="241" key="#Composer/0.30.1366.738@0.30.1366.738" timestamp="1599613502160" />
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1599776144801">
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1599776857923">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1599776144801" />
+    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1599776857923" />
     <state x="498" y="315" width="359" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599761435639">
       <screen x="0" y="30" width="1366" height="738" />
     </state>
