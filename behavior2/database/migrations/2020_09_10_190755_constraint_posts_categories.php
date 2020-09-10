@@ -27,6 +27,7 @@ class ConstraintPostsCategories extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeign('posts_category_foreign');
             $table->dropColumn('category');
         });
     }
