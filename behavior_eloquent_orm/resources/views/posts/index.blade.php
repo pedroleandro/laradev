@@ -12,15 +12,32 @@
 <body>
 
 <div class="container my-5">
+
+    <?php
+    if (!empty($posts)){
+    ?>
+
     <section class="articles_list">
+
+        <?php
+        foreach ($posts as $post){
+        ?>
+
         <article class="mb-5">
-            <h1>Título</h1>
-            <h2>Subtítulo</h2>
-            <p>Descrição</p>
-            <small>Criado em: - Editado em: </small>
+            <h1>{{ $post->title }}</h1>
+            <h2>{{ $post->subtitle }}</h2>
+            <p>{{ $post->description }}</p>
+            <small>Criado em: {{ date('Y-m-d H:i:s', strtotime($post->created_at)) }} - Editado em: {{ date('Y-m-d H:i:s', strtotime($post->updated_at)) }}</small>
         </article>
         <hr>
+
+        <?php
+        }
+        ?>
     </section>
+    <?php
+    }
+    ?>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
