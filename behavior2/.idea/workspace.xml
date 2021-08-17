@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1061b6-5ab0-434d-811e-830bbf3e320b" name="Default Changelist" comment="criando a primeira seeder">
-      <change afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../behavior/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../behavior/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -155,6 +157,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -165,6 +168,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -185,6 +189,10 @@
       <workItem from="1599759026255" duration="2174000" />
       <workItem from="1599761484473" duration="3873000" />
       <workItem from="1599772449913" duration="4258000" />
+      <workItem from="1628562273458" duration="65000" />
+      <workItem from="1628822005328" duration="5000" />
+      <workItem from="1628822469143" duration="1060000" />
+      <workItem from="1629162223104" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="criando a primeira migration">
       <created>1599761372206</created>
@@ -262,23 +270,5 @@
     <MESSAGE value="controle de migrações" />
     <MESSAGE value="criando a primeira seeder" />
     <option name="LAST_COMMIT_MESSAGE" value="criando a primeira seeder" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="492" y="280" width="372" height="241" key="#Composer" timestamp="1599613502160">
-      <screen x="0" y="30" width="1366" height="738" />
-    </state>
-    <state x="492" y="280" width="372" height="241" key="#Composer/0.30.1366.738@0.30.1366.738" timestamp="1599613502160" />
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1599776857923">
-      <screen x="0" y="30" width="1366" height="738" />
-    </state>
-    <state x="278" y="135" width="800" height="531" key="Vcs.Push.Dialog.v2/0.30.1366.738@0.30.1366.738" timestamp="1599776857923" />
-    <state x="498" y="315" width="359" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599761435639">
-      <screen x="0" y="30" width="1366" height="738" />
-    </state>
-    <state x="498" y="315" width="359" height="171" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1366.738@0.30.1366.738" timestamp="1599761435639" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599762503784">
-      <screen x="0" y="30" width="1366" height="738" />
-    </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.30.1366.738@0.30.1366.738" timestamp="1599762503784" />
   </component>
 </project>

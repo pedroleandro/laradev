@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97dff75b-14b9-48b8-8d87-0602200ab055" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prototipo/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../prototipo/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prototipo/.idea/prototipo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../prototipo/.idea/prototipo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../prototipo/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../prototipo/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +146,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -177,6 +175,7 @@
       <workItem from="1596769416667" duration="617000" />
       <workItem from="1596810603953" duration="2337000" />
       <workItem from="1599612645553" duration="96000" />
+      <workItem from="1628562259177" duration="8000" />
     </task>
     <servers />
   </component>
@@ -193,5 +192,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

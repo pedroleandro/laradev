@@ -7,12 +7,118 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/behavior/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/behavior/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/behavior/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/behavior/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/behavior/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/behavior/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/behavior/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/behavior/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/behavior/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/behavior/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/behavior/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/behavior/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/behavior/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/behavior/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/behavior/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/behavior/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/behavior/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/behavior/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/behavior/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/behavior/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/behavior/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/behavior/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/behavior/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/behavior/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/behavior/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/behavior/vendor/composer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/behavior/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/behavior/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/behavior/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/behavior/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/behavior/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/behavior/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/behavior/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/behavior/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/behavior/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/behavior/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/behavior/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/behavior/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/behavior/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/behavior/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/behavior/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/behavior/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/behavior/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/behavior/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/behavior/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/behavior/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/behavior/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/behavior/vendor/nexmo/client-core" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1fkkE3DKhDlg8f2T7LnkjUTEtjW" />
   <component name="ProjectViewState">
@@ -21,7 +127,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -32,16 +140,11 @@
       <option name="presentableId" value="Default" />
       <updated>1596769363738</updated>
       <workItem from="1596769365453" duration="16000" />
+      <workItem from="1628562045677" duration="86000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="492" y="280" width="372" height="241" key="#Composer" timestamp="1596769372767">
-      <screen x="0" y="30" width="1366" height="738" />
-    </state>
-    <state x="492" y="280" width="372" height="241" key="#Composer/0.30.1366.738@0.30.1366.738" timestamp="1596769372767" />
   </component>
 </project>
