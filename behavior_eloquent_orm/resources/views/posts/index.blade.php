@@ -30,7 +30,13 @@
             <h2>{{ $post->subtitle }}</h2>
             <p>{{ $post->description }}</p>
             <small>Criado em: {{ date('Y-m-d H:i:s', strtotime($post->created_at)) }} - Editado em: {{ date('Y-m-d H:i:s', strtotime($post->updated_at)) }}</small>
-            <p><a href="{{ route("posts.edit", ["id" => $post->id]) }}" class="btn btn-info">Editar</a></p>
+
+            <form action="{{ route("posts.destroy", ["id" => $post->id]) }}" method="post" class="mt-3">
+                @csrf
+                @method("DELETE")
+                <a href="{{ route("posts.edit", ["id" => $post->id]) }}" class="btn btn-info">Editar</a>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
         </article>
         <hr>
 
