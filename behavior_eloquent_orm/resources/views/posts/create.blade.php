@@ -12,7 +12,7 @@
 <body>
 
 <div class="container my-5">
-    <form action="" method="post" autocomplete="off">
+    <form action="{{ route('posts.store') }}" method="post">
 
         @csrf
 

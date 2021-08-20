@@ -10,4 +10,6 @@ class Post extends Model
     protected $primaryKey = 'id';
 
     public $timestamps = true;
+
+    protected $fillable = ["title", "subtitle", "description"];
 }
