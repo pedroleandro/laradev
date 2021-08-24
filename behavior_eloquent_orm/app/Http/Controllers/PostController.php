@@ -95,4 +95,30 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route("posts.index");
     }
+
+    public function bin()
+    {
+        $posts = Post::onlyTrashed()->get();
+
+        return view('posts.bin', ['posts' => $posts]);
+
+    }
+
+    public function restore($post)
+    {
+        $post = Post::onlyTrashed()->where(["id" => $post])->first();
+
+        if ($post->trashed()) {
+            $post->restore();
+        }
+
+        return redirect()->route("posts.bin");
+    }
+
+    public function delete($post)
+    {
+        Post::onlyTrashed()->where(["id" => $post])->forceDelete();
+
+        return redirect()->route("posts.bin");
+    }
 }
