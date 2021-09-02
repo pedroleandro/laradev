@@ -50,11 +50,11 @@ class UserController extends Controller
 
         var_dump($user);
 
-        $posts = $user->posts()->orderBy('id', 'ASC')->get();
+        $comments = $user->commentsOnMyPost()->get();
 
-        if($posts){
-            foreach ($posts as $post){
-                var_dump($post);
+        if($comments){
+            foreach ($comments as $comment){
+                var_dump($comment);
             }
         }
 
