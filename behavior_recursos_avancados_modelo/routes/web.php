@@ -36,6 +36,7 @@
 
 Route::resource('users', 'UserController');
 Route::resource('address', 'AddressController');
+Route::resource('posts', 'PostController');
 
 Route::get('/', function () {
     return view('welcome');
