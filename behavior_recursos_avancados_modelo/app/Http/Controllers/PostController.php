@@ -48,7 +48,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        var_dump($post);
+        var_dump($post->created);
 
 //        $post->comments()->create(
 //            [
