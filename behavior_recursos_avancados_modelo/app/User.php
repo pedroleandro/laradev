@@ -56,4 +56,14 @@ class User extends Authenticatable
     {
         return $this->morphMany(Comment::class, 'item');
     }
+
+    public function scopeStudents($query)
+    {
+        return $this->where('level', '<=', 5);
+    }
+
+    public function scopeAdmins($query)
+    {
+        return $this->where('level', '>', 5);
+    }
 }

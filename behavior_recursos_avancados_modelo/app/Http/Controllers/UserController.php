@@ -50,11 +50,23 @@ class UserController extends Controller
 
         var_dump($user);
 
-        $comments = $user->commentsOnMyPost()->get();
+        var_dump("Estudantes");
 
-        if($comments){
-            foreach ($comments as $comment){
-                var_dump($comment);
+        $students = User::students()->get();
+
+        if($students){
+            foreach ($students as $student){
+                var_dump($student);
+            }
+        }
+
+        var_dump("Administradores");
+
+        $admins = User::admins()->get();
+
+        if($admins){
+            foreach ($admins as $admin){
+                var_dump($admin);
             }
         }
 
