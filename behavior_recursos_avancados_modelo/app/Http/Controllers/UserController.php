@@ -46,30 +46,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $users = User::all();
 
-        var_dump($user);
-
-        var_dump("Estudantes");
-
-        $students = User::students()->get();
-
-        if($students){
-            foreach ($students as $student){
-                var_dump($student);
-            }
-        }
-
-        var_dump("Administradores");
-
-        $admins = User::admins()->get();
-
-        if($admins){
-            foreach ($admins as $admin){
-                var_dump($admin);
-            }
-        }
-
+        var_dump($users->makeVisible('created_at')->toArray());
+        var_dump($users->makeHidden('created_at')->toJson(JSON_PRETTY_PRINT));
     }
 
     /**
