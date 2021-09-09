@@ -15,9 +15,10 @@ class UserController extends Controller
     public function index()
     {
         $users = DB::table('users')
-            ->select('users.id', 'users.name', 'users.email', 'users.status')
-            ->where('users.status', '=', '1')
-            ->orderBy('users.name', 'ASC')
+            ->selectRaw('users.id, users.name, users.email, CASE WHEN users.status = 1 THEN "ATIVO" ELSE "INATIVO" END status')
+            ->whereRaw('(SELECT COUNT(1) FROM addresses addresses WHERE addresses.user = users.id) > 2')
+            ->whereRaw('users.status = 1')
+            ->orderByRaw('users.name', 'ASC')
             ->get();
 
         foreach ($users as $user){
