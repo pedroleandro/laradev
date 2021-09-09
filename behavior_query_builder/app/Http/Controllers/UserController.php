@@ -14,14 +14,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        DB::table('users')
+        $users = DB::table('users')
             ->selectRaw('users.id, users.name, users.email, CASE WHEN users.status = 1 THEN "ATIVO" ELSE "INATIVO" END status')
-            ->where('id', '<', '500')
-            ->chunkById('100', function ($users){
-                foreach ($users as $user){
-                    var_dump($user);
-                }
-            });
+            ->whereIn('users.status', [0,1])
+            ->get();
+
+        foreach ($users as $user){
+            var_dump($user);
+        }
     }
 
     /**
