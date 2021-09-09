@@ -15,8 +15,9 @@ class UserController extends Controller
     public function index()
     {
         $users = DB::table('users')
-            ->selectRaw('users.id, users.name, users.email, CASE WHEN users.status = 1 THEN "ATIVO" ELSE "INATIVO" END status')
-            ->whereIn('users.status', [0,1])
+            ->selectRaw('users.id, users.name, users.email, users.status, addresses.address')
+            ->leftJoin('addresses', 'users.id', '=', 'addresses.user')
+            ->orderBy('users.name', 'ASC')
             ->get();
 
         foreach ($users as $user){
