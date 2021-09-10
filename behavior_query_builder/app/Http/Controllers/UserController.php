@@ -14,15 +14,25 @@ class UserController extends Controller
      */
     public function index()
     {
+//        $users = DB::table('users')
+//            ->selectRaw('users.id, users.name, users.email, CASE WHEN users.status = 1 THEN "ATIVO" ELSE "BLOQUEADO" END status')
+//            ->simplePaginate(100);
+//
+//        foreach ($users as $user){
+//            echo "#{$user->id} Nome: {$user->name} Status: {$user->status}<br>";
+//        }
+//
+//        echo $users->links();
+
         $users = DB::table('users')
-            ->selectRaw('users.id, users.name, users.email, users.status, addresses.address')
-            ->leftJoin('addresses', 'users.id', '=', 'addresses.user')
-            ->orderBy('users.name', 'ASC')
-            ->get();
+            ->selectRaw('users.id, users.name, users.email, CASE WHEN users.status = 1 THEN "ATIVO" ELSE "BLOQUEADO" END status')
+            ->paginate(100);
 
         foreach ($users as $user){
-            var_dump($user);
+            echo "#{$user->id} Nome: {$user->name} Status: {$user->status}<br>";
         }
+
+        echo $users->links();
     }
 
     /**
