@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/log', 'ServiceController@log')->name('services.log');
+Route::resource('services', 'ServiceController');
+
 Route::get('/', function () {
     return view('welcome');
 });
