@@ -4,9 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
+    public function session()
+    {
+        session([
+            'course' => 'Laravel Developer'
+        ]);
+
+        session()->put('name', 'Pedro Leandro');
+
+        echo session('name') . "</br>";
+
+        echo session('student', function () {
+            session()->put('student', 'Pedro Leandro');
+            return session('student');
+        });
+
+        echo "</br>" . session()->get('name');
+
+        //session()->push('time', 'Pedro Leandro');
+
+        ///Receber e deletar a key
+        $student = session()->pull('student');
+        echo "</br>" . $student;
+
+        session()->forget('name');
+
+        //session()->flush();
+
+        if (session()->has('course')) {
+            echo "</br>" . "O curso selecionado foi " . session()->get('course');
+        }
+
+        if (session()->exists('course')) {
+            echo "</br>" . "Esse curso existe";
+        } else {
+            echo "</br>" . "Esse curso não existe";
+        }
+
+        //session()->flash('message', 'Bem vindo a UpInside!');
+        //session()->reflash();
+
+        var_dump(session()->all());
+    }
+
     public function log()
     {
         Log::error("Teste de mensagem de log");
@@ -35,7 +79,7 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,7 +90,7 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +101,7 @@ class ServiceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +112,8 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -80,7 +124,7 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -12,6 +12,7 @@
 */
 
 Route::get('/log', 'ServiceController@log')->name('services.log');
+Route::get('/session', 'ServiceController@session')->name('services.session');
 Route::resource('services', 'ServiceController');
 
 Route::get('/', function () {
