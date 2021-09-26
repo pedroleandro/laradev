@@ -16,7 +16,8 @@ Route::get('/session', 'ServiceController@session')->name('services.session');
 Route::get('/email', 'ServiceController@email')->name('services.email');
 Route::get('/email-queue', 'ServiceController@email-queue')->name('services.email-queue');
 Route::get('/files', 'ServiceController@files')->name('services.files');
-Route::resource('services', 'ServiceController');
+Route::resource('/services', 'ServiceController');
+Route::resource('/imoveis', 'PropertyController');
 
 Route::get('/', function () {
     return view('welcome');
