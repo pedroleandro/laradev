@@ -7,9 +7,51 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
+    public function files()
+    {
+        $files = Storage::files();
+        $allFiles = Storage::allFiles();
+
+//        Storage::makeDirectory('public/students');
+
+        $directories = Storage::directories();
+        $allDirectories = Storage::allDirectories();
+
+//        Storage::makeDirectory('public/course');
+
+//        Storage::deleteDirectory('public/course');
+
+//        Storage::disk('public')->put('upinside.txt', 'O melhor curso de laravel do mercado.');
+//        Storage::put('upinside-treinamentos.txt', 'O melhor curso de laravel do mercado.');
+
+//        echo Storage::get('upinside-treinamentos.txt');
+
+//        var_dump($files, $allFiles, $directories, $allDirectories);
+
+//        return Storage::download('upinside-treinamentos.txt');
+
+//        if(Storage::exists('upinside-treinamentos.txt')){
+//            echo "O arquivo existe";
+//        }else{
+//            echo "O arquivo não existe";
+//        }
+
+//        echo Storage::size('upinside-treinamentos.txt') . "</br>";
+//        echo Storage::lastModified('upinside-treinamentos.txt');
+
+//        Storage::prepend('upinside-treinamentos.txt', 'UpInside Treinamentos');
+//        Storage::append('upinside-treinamentos.txt', 'Vem estudar com a gente');
+
+//        Storage::copy('upinside-treinamentos.txt', 'public/upinside-treinamentos.txt');
+//        Storage::move('upinside-treinamentos.txt', 'public/upinside-treinamentos.txt');
+//        Storage::delete('public/upinside-treinamentos.txt');
+
+    }
+
     public function emailQueue()
     {
         $user = new \stdClass();
