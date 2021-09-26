@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
+    public function myMiddleware()
+    {
+        Log::info('Executando no controlador');
+        echo "Seja bem vindo ao teste de middleware!";
+    }
+
     public function files()
     {
         $files = Storage::files();
