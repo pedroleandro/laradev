@@ -2,12 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WelcomeLaraDev;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
+    public function email()
+    {
+        $user = new \stdClass();
+        $user->name = "Pedro Leandro";
+        $user->email = "pedro.leandrog@gmail.com";
+
+        $order = new \stdClass();
+        $order->type = "billet";
+        $order->due_at = "2019-01-10";
+        $order->value = 697;
+
+//        var_dump($user, $order);
+
+//        Mail::send(new WelcomeLaraDev());
+        return (new WelcomeLaraDev($user, $order));
+    }
+
     public function session()
     {
         session([
