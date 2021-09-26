@@ -10,6 +10,20 @@ use Illuminate\Support\Facades\Session;
 
 class ServiceController extends Controller
 {
+    public function emailQueue()
+    {
+        $user = new \stdClass();
+        $user->name = "Pedro Leandro";
+        $user->email = "pedro.leandrog@gmail.com";
+
+        $order = new \stdClass();
+        $order->type = "billet";
+        $order->due_at = "2019-01-10";
+        $order->value = 697;
+
+        \App\Jobs\WelcomeLaraDev::dispatch($user, $order)->delay(now()->addSecond(15));
+    }
+
     public function email()
     {
         $user = new \stdClass();
