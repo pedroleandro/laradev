@@ -16,37 +16,37 @@ class ServiceController extends Controller
 
         session()->put('name', 'Pedro Leandro');
 
-        echo session('name') . "</br>";
+//        echo session('name') . "</br>";
 
-        echo session('student', function () {
-            session()->put('student', 'Pedro Leandro');
-            return session('student');
-        });
+//        echo session('student', function () {
+//            session()->put('student', 'Pedro Leandro');
+//            return session('student');
+//        });
 
-        echo "</br>" . session()->get('name');
+//        echo "</br>" . session()->get('name');
 
         //session()->push('time', 'Pedro Leandro');
 
         ///Receber e deletar a key
-        $student = session()->pull('student');
-        echo "</br>" . $student;
+//        $student = session()->pull('student');
+//        echo "</br>" . $student;
 
-        session()->forget('name');
+//        session()->forget('name');
 
         //session()->flush();
 
-        if (session()->has('course')) {
-            echo "</br>" . "O curso selecionado foi " . session()->get('course');
-        }
+//        if (session()->has('course')) {
+//            echo "</br>" . "O curso selecionado foi " . session()->get('course');
+//        }
 
-        if (session()->exists('course')) {
-            echo "</br>" . "Esse curso existe";
-        } else {
-            echo "</br>" . "Esse curso não existe";
-        }
+//        if (session()->exists('course')) {
+//            echo "</br>" . "Esse curso existe";
+//        } else {
+//            echo "</br>" . "Esse curso não existe";
+//        }
 
-        //session()->flash('message', 'Bem vindo a UpInside!');
-        //session()->reflash();
+//        session()->flash('message', 'Bem vindo a UpInside!');
+//        session()->reflash();
 
         var_dump(session()->all());
     }
