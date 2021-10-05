@@ -1,101 +1,121 @@
-Meu nome é {{ $user->name }} <br>
+@extends('front.master.master')
 
-{!! $alert !!}
+@section('title', 'Seja muito bem vindo')
 
-{{-- Meu comentário --}}
+@section('content')
 
-<?php
-echo "<h1>Sintaxe do PHP</h1>";
-if (!empty($user->email)) {
-    echo "<p>[IF] O usuário informou um e-mail</p>";
-} elseif ($user) {
-    echo "<p>[ELSEIF] Existe um objeto usuário</p>";
-} else {
-    echo "<p>[ELSE] Não Existe um objeto usuário</p>";
-}
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-12">
+                Meu nome é {{ $user->name }} <br>
+                {!! $alert !!}
+                {{-- Meu comentário --}}
+            </div>
+        </div>
 
-echo "<p>[TERNÁRIA] " . (!empty($user->email) ? 'O usuário informou um e-mail' : 'Existe um objeto usuário') . "</p>";
-echo "<p>[TERNÁRIA DUPLA] " . (!empty($user->email) ? 'O usuário informou um e-mail' : ($user ? 'Existe um objeto usuário' : 'Não Existe um objeto usuário')) . "</p>";
+        <div class="row">
+            <div class="col-6">
 
-if (isset($user)) {
-    echo "<p>[ISSET] Existe um usuário</p>";
-}
+                <?php
+                echo "<h1>Sintaxe do PHP</h1>";
+                if (!empty($user->email)) {
+                    echo "<p>[IF] O usuário informou um e-mail</p>";
+                } elseif ($user) {
+                    echo "<p>[ELSEIF] Existe um objeto usuário</p>";
+                } else {
+                    echo "<p>[ELSE] Não Existe um objeto usuário</p>";
+                }
 
-if (empty($user)) {
-    echo "<p>[EMPTY] O Usuário está vazio</p>";
-}
+                echo "<p>[TERNÁRIA] " . (!empty($user->email) ? 'O usuário informou um e-mail' : 'Existe um objeto usuário') . "</p>";
+                echo "<p>[TERNÁRIA DUPLA] " . (!empty($user->email) ? 'O usuário informou um e-mail' : ($user ? 'Existe um objeto usuário' : 'Não Existe um objeto usuário')) . "</p>";
 
-$var = '1';
+                if (isset($user)) {
+                    echo "<p>[ISSET] Existe um usuário</p>";
+                }
 
-switch ($var) {
-    case '1':
-        echo "<p>[CASE 1]</p>";
-        break;
-    case '2':
-        echo "<p>[CASE 2]</p>";
-        break;
-    default:
-        echo "<p>[CASE Default]</p>";
-        break;
-}
+                if (empty($user)) {
+                    echo "<p>[EMPTY] O Usuário está vazio</p>";
+                }
 
-echo "<h2>Listagem dos cursos</h2>";
+                $var = '1';
 
-for ($i = 0; $i < count($courses); $i++) {
-    echo "<p>" . $courses[$i]["name"] . " - " . $courses[$i]["tutor"] . "</p>";
-}
+                switch ($var) {
+                    case '1':
+                        echo "<p>[CASE 1]</p>";
+                        break;
+                    case '2':
+                        echo "<p>[CASE 2]</p>";
+                        break;
+                    default:
+                        echo "<p>[CASE Default]</p>";
+                        break;
+                }
 
-foreach ($courses as $course) {
-    echo "<p>" . $course["name"] . " - " . $course["tutor"] . "</p>";
-}
+                echo "<h2>Listagem dos cursos</h2>";
 
-?>
+                for ($i = 0; $i < count($courses); $i++) {
+                    echo "<p>" . $courses[$i]["name"] . " - " . $courses[$i]["tutor"] . "</p>";
+                }
 
-<h1>Sintaxe do Blade</h1>
+                foreach ($courses as $course) {
+                    echo "<p>" . $course["name"] . " - " . $course["tutor"] . "</p>";
+                }
 
-@if(!empty($user->email))
-    <p>[IF] O usuário informou um e-mail</p>
-@elseif($user)
-    <p>[ELSEIF] Existe um objeto usuário</p>
-@else
-    <p>[ELSE] Não Existe um objeto usuário</p>
-@endif
+                ?>
 
-<p>[TERNÁRIA] {{ (!empty($user->email) ? 'O usuário informou um e-mail' : 'Existe um objeto usuário') }}</p>
-<p>[TERNÁRIA
-    DUPLA] {{ (!empty($user->email) ? 'O usuário informou um e-mail' : ($user ? 'Existe um objeto usuário' : 'Não Existe um objeto usuário')) }}</p>
+            </div>
+            <div class="col-6">
 
-@isset($user)
-    <p>[ISSET] Existe um usuário</p>
-@endisset
+                <h1>Sintaxe do Blade</h1>
 
-@empty($user)
-    <p>[ISSET] Existe um usuário</p>
-@endempty
+                @if(!empty($user->email))
+                    <p>[IF] O usuário informou um e-mail</p>
+                @elseif($user)
+                    <p>[ELSEIF] Existe um objeto usuário</p>
+                @else
+                    <p>[ELSE] Não Existe um objeto usuário</p>
+                @endif
 
-@switch($var)
-    @case('1')
-    <p>[CASE 1]</p>
-    @break
-    @case('2')
-    <p>[CASE 2]</p>
-    @break
-    @default
-    <p>[CASE Default]</p>
-    @break
-@endswitch
+                <p>[TERNÁRIA] {{ (!empty($user->email) ? 'O usuário informou um e-mail' : 'Existe um objeto usuário') }}</p>
+                <p>[TERNÁRIA
+                    DUPLA] {{ (!empty($user->email) ? 'O usuário informou um e-mail' : ($user ? 'Existe um objeto usuário' : 'Não Existe um objeto usuário')) }}</p>
 
-<h2>Listagem dos cursos</h2>
+                @isset($user)
+                    <p>[ISSET] Existe um usuário</p>
+                @endisset
 
-@for($i = 0; $i < count($courses); $i++)
-    <p>{{ $courses[$i]["name"] }} - {{ $courses[$i]["tutor"] }}</p>
-@endfor
+                @empty($user)
+                    <p>[ISSET] Existe um usuário</p>
+                @endempty
 
-@foreach($courses as $course)
-    <p style="background-color: {{ $loop->index/2===0 ? 'red': 'blue'}}">{{ $course["name"] }}
-        - {{ $course["tutor"] }}</p>
+                @switch($var)
+                    @case('1')
+                    <p>[CASE 1]</p>
+                    @break
+                    @case('2')
+                    <p>[CASE 2]</p>
+                    @break
+                    @default
+                    <p>[CASE Default]</p>
+                    @break
+                @endswitch
 
-    {{--    @php--}}
-    {{--        var_dump($loop);--}}
-    {{--    @endphp--}}
-@endforeach
+                <h2>Listagem dos cursos</h2>
+
+                @for($i = 0; $i < count($courses); $i++)
+                    <p>{{ $courses[$i]["name"] }} - {{ $courses[$i]["tutor"] }}</p>
+                @endfor
+
+                @foreach($courses as $course)
+                    <p style="background-color: {{ $loop->index/2===0 ? 'red': 'blue'}}">{{ $course["name"] }}
+                        - {{ $course["tutor"] }}</p>
+
+                    {{--    @php--}}
+                    {{--        var_dump($loop);--}}
+                    {{--    @endphp--}}
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+@endsection
