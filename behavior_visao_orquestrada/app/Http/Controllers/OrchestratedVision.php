@@ -18,11 +18,30 @@ class OrchestratedVision extends Controller
         $user->birth = "1997-06-28";
         $user->email = "pedro.leandrog@gmail.com";
 
+        $courses = [
+            [
+                "id" => 1,
+                "name" => "Laravel Developer",
+                "tutor" => "Gustavo Web"
+            ],
+            [
+                "id" => 2,
+                "name" => "Bootstrap Builder",
+                "tutor" => "Gustavo Web"
+            ],
+            [
+                "id" => 3,
+                "name" => "Fullstack PHP Developer",
+                "tutor" => "Robson V Leite"
+            ]
+        ];
+
         $alert = "<div style='background-color: red;'>Teste</div>";
 
         return view('front.home', [
             'user' => $user,
-            'alert' => $alert
+            'alert' => $alert,
+            'courses' => $courses
         ]);
     }
 

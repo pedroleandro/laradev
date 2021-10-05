@@ -39,6 +39,16 @@ switch ($var) {
         break;
 }
 
+echo "<h2>Listagem dos cursos</h2>";
+
+for ($i = 0; $i < count($courses); $i++) {
+    echo "<p>" . $courses[$i]["name"] . " - " . $courses[$i]["tutor"] . "</p>";
+}
+
+foreach ($courses as $course) {
+    echo "<p>" . $course["name"] . " - " . $course["tutor"] . "</p>";
+}
+
 ?>
 
 <h1>Sintaxe do Blade</h1>
@@ -74,3 +84,18 @@ switch ($var) {
     <p>[CASE Default]</p>
     @break
 @endswitch
+
+<h2>Listagem dos cursos</h2>
+
+@for($i = 0; $i < count($courses); $i++)
+    <p>{{ $courses[$i]["name"] }} - {{ $courses[$i]["tutor"] }}</p>
+@endfor
+
+@foreach($courses as $course)
+    <p style="background-color: {{ $loop->index/2===0 ? 'red': 'blue'}}">{{ $course["name"] }}
+        - {{ $course["tutor"] }}</p>
+
+    {{--    @php--}}
+    {{--        var_dump($loop);--}}
+    {{--    @endphp--}}
+@endforeach
