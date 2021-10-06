@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/vision', 'OrchestratedVision');
+Route::get('/curso', 'OrchestratedVision@course');
+
+Route::resource('/visao', 'OrchestratedVision');

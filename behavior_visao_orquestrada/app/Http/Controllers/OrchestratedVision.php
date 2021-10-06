@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class OrchestratedVision extends Controller
 {
+    public function course()
+    {
+        return view('front.course');
+    }
+
     /**
      * Display a listing of the resource.
      *
