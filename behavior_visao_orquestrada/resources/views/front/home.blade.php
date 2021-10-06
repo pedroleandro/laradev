@@ -17,7 +17,7 @@
             <div class="col-6">
 
                 <?php
-                echo "<h1>Sintaxe do PHP</h1>";
+                echo "<h1 class='nova'>Sintaxe do PHP</h1>";
                 if (!empty($user->email)) {
                     echo "<p>[IF] O usuário informou um e-mail</p>";
                 } elseif ($user) {
