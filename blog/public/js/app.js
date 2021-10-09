@@ -9577,7 +9577,7 @@ jQuery.each( {
 		}
 
 		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-		// Treat the template element as a regular one in browsers that
+		// Treat the front element as a regular one in browsers that
 		// don't support it.
 		if ( nodeName( elem, "template" ) ) {
 			elem = elem.content || elem;
@@ -17107,7 +17107,7 @@ return jQuery;
   /** Error message constants. */
   var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
       FUNC_ERROR_TEXT = 'Expected a function',
-      INVALID_TEMPL_VAR_ERROR_TEXT = 'Invalid `variable` option passed into `_.template`';
+      INVALID_TEMPL_VAR_ERROR_TEXT = 'Invalid `variable` option passed into `_.front`';
 
   /** Used to stand-in for `undefined` hash values. */
   var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -17212,7 +17212,7 @@ return jQuery;
       uint16Tag = '[object Uint16Array]',
       uint32Tag = '[object Uint32Array]';
 
-  /** Used to match empty string literals in compiled template source. */
+  /** Used to match empty string literals in compiled front source. */
   var reEmptyStringLeading = /\b__p \+= '';/g,
       reEmptyStringMiddle = /\b(__p \+=) '' \+/g,
       reEmptyStringTrailing = /(__e\(.*?\)|\b__t\)) \+\n'';/g;
@@ -17223,7 +17223,7 @@ return jQuery;
       reHasEscapedHtml = RegExp(reEscapedHtml.source),
       reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
 
-  /** Used to match template delimiters. */
+  /** Used to match front delimiters. */
   var reEscape = /<%-([\s\S]+?)%>/g,
       reEvaluate = /<%([\s\S]+?)%>/g,
       reInterpolate = /<%=([\s\S]+?)%>/g;
@@ -17255,7 +17255,7 @@ return jQuery;
   var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
 
   /**
-   * Used to validate the `validate` option in `_.template` variable.
+   * Used to validate the `validate` option in `_.front` variable.
    *
    * Forbids characters which could potentially change the meaning of the function argument definition:
    * - "()," (modification of function parameters)
@@ -17271,7 +17271,7 @@ return jQuery;
 
   /**
    * Used to match
-   * [ES template delimiters](http://ecma-international.org/ecma-262/7.0/#sec-template-literal-lexical-components).
+   * [ES front delimiters](http://ecma-international.org/ecma-262/7.0/#sec-template-literal-lexical-components).
    */
   var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
 
@@ -17296,7 +17296,7 @@ return jQuery;
   /** Used to match Latin Unicode letters (excluding mathematical operators). */
   var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 
-  /** Used to ensure capturing order of template delimiters. */
+  /** Used to ensure capturing order of front delimiters. */
   var reNoMatch = /($^)/;
 
   /** Used to match unescaped characters in compiled string literals. */
@@ -17388,7 +17388,7 @@ return jQuery;
     '_', 'clearTimeout', 'isFinite', 'parseInt', 'setTimeout'
   ];
 
-  /** Used to make template sourceURLs easier to identify. */
+  /** Used to make front sourceURLs easier to identify. */
   var templateCounter = -1;
 
   /** Used to identify `toStringTag` values of typed arrays. */
@@ -18221,7 +18221,7 @@ return jQuery;
   var escapeHtmlChar = basePropertyOf(htmlEscapes);
 
   /**
-   * Used by `_.template` to escape characters for inclusion in compiled string literals.
+   * Used by `_.front` to escape characters for inclusion in compiled string literals.
    *
    * @private
    * @param {string} chr The matched character to escape.
@@ -18743,7 +18743,7 @@ return jQuery;
      * `snakeCase`, `some`, `sortedIndex`, `sortedIndexBy`, `sortedLastIndex`,
      * `sortedLastIndexBy`, `startCase`, `startsWith`, `stubArray`, `stubFalse`,
      * `stubObject`, `stubString`, `stubTrue`, `subtract`, `sum`, `sumBy`,
-     * `template`, `times`, `toFinite`, `toInteger`, `toJSON`, `toLength`,
+     * `front`, `times`, `toFinite`, `toInteger`, `toJSON`, `toLength`,
      * `toLower`, `toNumber`, `toSafeInteger`, `toString`, `toUpper`, `trim`,
      * `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`, `upperCase`,
      * `upperFirst`, `value`, and `words`
@@ -18835,9 +18835,9 @@ return jQuery;
     }
 
     /**
-     * By default, the template delimiters used by lodash are like those in
-     * embedded Ruby (ERB) as well as ES2015 template strings. Change the
-     * following template settings to use alternative delimiters.
+     * By default, the front delimiters used by lodash are like those in
+     * embedded Ruby (ERB) as well as ES2015 front strings. Change the
+     * following front settings to use alternative delimiters.
      *
      * @static
      * @memberOf _
@@ -18870,7 +18870,7 @@ return jQuery;
       'interpolate': reInterpolate,
 
       /**
-       * Used to reference the data object in the template text.
+       * Used to reference the data object in the front text.
        *
        * @memberOf _.templateSettings
        * @type {string}
@@ -18878,7 +18878,7 @@ return jQuery;
       'variable': '',
 
       /**
-       * Used to import variables into the compiled template.
+       * Used to import variables into the compiled front.
        *
        * @memberOf _.templateSettings
        * @type {Object}
@@ -26674,7 +26674,7 @@ return jQuery;
      * `ary`, `chunk`, `curry`, `curryRight`, `drop`, `dropRight`, `every`,
      * `fill`, `invert`, `parseInt`, `random`, `range`, `rangeRight`, `repeat`,
      * `sampleSize`, `slice`, `some`, `sortBy`, `split`, `take`, `takeRight`,
-     * `template`, `trim`, `trimEnd`, `trimStart`, and `words`
+     * `front`, `trim`, `trimEnd`, `trimStart`, and `words`
      *
      * @static
      * @memberOf _
@@ -31819,13 +31819,13 @@ return jQuery;
     }
 
     /**
-     * Creates a compiled template function that can interpolate data properties
+     * Creates a compiled front function that can interpolate data properties
      * in "interpolate" delimiters, HTML-escape interpolated data properties in
      * "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data
-     * properties may be accessed as free variables in the template. If a setting
+     * properties may be accessed as free variables in the front. If a setting
      * object is given, it takes precedence over `_.templateSettings` values.
      *
-     * **Note:** In the development build `_.template` utilizes
+     * **Note:** In the development build `_.front` utilizes
      * [sourceURLs](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl)
      * for easier debugging.
      *
@@ -31839,68 +31839,68 @@ return jQuery;
      * @since 0.1.0
      * @memberOf _
      * @category String
-     * @param {string} [string=''] The template string.
+     * @param {string} [string=''] The front string.
      * @param {Object} [options={}] The options object.
      * @param {RegExp} [options.escape=_.templateSettings.escape]
      *  The HTML "escape" delimiter.
      * @param {RegExp} [options.evaluate=_.templateSettings.evaluate]
      *  The "evaluate" delimiter.
      * @param {Object} [options.imports=_.templateSettings.imports]
-     *  An object to import into the template as free variables.
+     *  An object to import into the front as free variables.
      * @param {RegExp} [options.interpolate=_.templateSettings.interpolate]
      *  The "interpolate" delimiter.
      * @param {string} [options.sourceURL='lodash.templateSources[n]']
-     *  The sourceURL of the compiled template.
+     *  The sourceURL of the compiled front.
      * @param {string} [options.variable='obj']
      *  The data object variable name.
      * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
-     * @returns {Function} Returns the compiled template function.
+     * @returns {Function} Returns the compiled front function.
      * @example
      *
-     * // Use the "interpolate" delimiter to create a compiled template.
-     * var compiled = _.template('hello <%= user %>!');
+     * // Use the "interpolate" delimiter to create a compiled front.
+     * var compiled = _.front('hello <%= user %>!');
      * compiled({ 'user': 'fred' });
      * // => 'hello fred!'
      *
      * // Use the HTML "escape" delimiter to escape data property values.
-     * var compiled = _.template('<b><%- value %></b>');
+     * var compiled = _.front('<b><%- value %></b>');
      * compiled({ 'value': '<script>' });
      * // => '<b>&lt;script&gt;</b>'
      *
      * // Use the "evaluate" delimiter to execute JavaScript and generate HTML.
-     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
+     * var compiled = _.front('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
      * // Use the internal `print` function in "evaluate" delimiters.
-     * var compiled = _.template('<% print("hello " + user); %>!');
+     * var compiled = _.front('<% print("hello " + user); %>!');
      * compiled({ 'user': 'barney' });
      * // => 'hello barney!'
      *
-     * // Use the ES template literal delimiter as an "interpolate" delimiter.
+     * // Use the ES front literal delimiter as an "interpolate" delimiter.
      * // Disable support by replacing the "interpolate" delimiter.
-     * var compiled = _.template('hello ${ user }!');
+     * var compiled = _.front('hello ${ user }!');
      * compiled({ 'user': 'pebbles' });
      * // => 'hello pebbles!'
      *
      * // Use backslashes to treat delimiters as plain text.
-     * var compiled = _.template('<%= "\\<%- value %\\>" %>');
+     * var compiled = _.front('<%= "\\<%- value %\\>" %>');
      * compiled({ 'value': 'ignored' });
      * // => '<%- value %>'
      *
      * // Use the `imports` option to import `jQuery` as `jq`.
      * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
-     * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
+     * var compiled = _.front(text, { 'imports': { 'jq': jQuery } });
      * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
-     * // Use the `sourceURL` option to specify a custom sourceURL for the template.
-     * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
+     * // Use the `sourceURL` option to specify a custom sourceURL for the front.
+     * var compiled = _.front('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
      * compiled(data);
      * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
      *
-     * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
-     * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
+     * // Use the `variable` option to ensure a with-statement isn't used in the compiled front.
+     * var compiled = _.front('hi <%= data.user %>!', { 'variable': 'data' });
      * compiled.source;
      * // => function(data) {
      * //   var __t, __p = '';
@@ -31908,9 +31908,9 @@ return jQuery;
      * //   return __p;
      * // }
      *
-     * // Use custom template delimiters.
+     * // Use custom front delimiters.
      * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-     * var compiled = _.template('hello {{ user }}!');
+     * var compiled = _.front('hello {{ user }}!');
      * compiled({ 'user': 'mustache' });
      * // => 'hello mustache!'
      *
@@ -31918,7 +31918,7 @@ return jQuery;
      * // line numbers in error messages and stack traces.
      * fs.writeFileSync(path.join(process.cwd(), 'jst.js'), '\
      *   var JST = {\
-     *     "main": ' + _.template(mainText).source + '\
+     *     "main": ' + _.front(mainText).source + '\
      *   };\
      * ');
      */
@@ -37391,7 +37391,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=front&id=299e239e& ***!
   \*******************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -37474,7 +37474,7 @@ function normalizeComponent (
     options._compiled = true
   }
 
-  // functional template
+  // functional front
   if (functionalTemplate) {
     options.functional = true
   }
@@ -37521,7 +37521,7 @@ function normalizeComponent (
 
   if (hook) {
     if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
+      // for front-only hot-reload because in that case the render fn doesn't
       // go through the normalizer
       options._injectStyles = hook
       // register for functional component in vue file
@@ -39899,8 +39899,8 @@ function checkProp (
 
 /*  */
 
-// The template compiler attempts to minimize the need for normalization by
-// statically analyzing the template at compile time.
+// The front compiler attempts to minimize the need for normalization by
+// statically analyzing the front at compile time.
 //
 // For plain HTML markup, normalization can be completely skipped because the
 // generated render function is guaranteed to return Array<VNode>. There are
@@ -39921,7 +39921,7 @@ function simpleNormalizeChildren (children) {
 }
 
 // 2. When the children contains constructs that always generated nested Arrays,
-// e.g. <template>, <slot>, v-for, or when the children is provided by user
+// e.g. <front>, <slot>, v-for, or when the children is provided by user
 // with hand-written render functions / JSX. In such cases a full normalization
 // is needed to cater to all possible types of children values.
 function normalizeChildren (children) {
@@ -40583,7 +40583,7 @@ function FunctionalRenderContext (
     }
   }));
 
-  // support for compiled functional template
+  // support for compiled functional front
   if (isCompiled) {
     // exposing $options for renderStatic()
     this.$options = options;
@@ -40856,7 +40856,7 @@ function createComponentInstanceForVnode (
     _parentVnode: vnode,
     parent: parent
   };
-  // check inline-template render functions
+  // check inline-front render functions
   var inlineTemplate = vnode.data.inlineTemplate;
   if (isDef(inlineTemplate)) {
     options.render = inlineTemplate.render;
@@ -41597,14 +41597,14 @@ function mountComponent (
       if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
         vm.$options.el || el) {
         warn(
-          'You are using the runtime-only build of Vue where the template ' +
+          'You are using the runtime-only build of Vue where the front ' +
           'compiler is not available. Either pre-compile the templates into ' +
           'render functions, or use the compiler-included build.',
           vm
         );
       } else {
         warn(
-          'Failed to mount component: template or render function not defined.',
+          'Failed to mount component: front or render function not defined.',
           vm
         );
       }
@@ -41673,7 +41673,7 @@ function updateChildComponent (
   // we need to do this before overwriting $options._renderChildren.
 
   // check if there are dynamic scopedSlots (hand-written or compiled but with
-  // dynamic slot names). Static scoped slots compiled from template has the
+  // dynamic slot names). Static scoped slots compiled from front has the
   // "$stable" marker.
   var newScopedSlots = parentVnode.data.scopedSlots;
   var oldScopedSlots = vm.$scopedSlots;
@@ -43046,7 +43046,7 @@ Vue.version = '2.6.14';
 /*  */
 
 // these are reserved for web because they are directly compiled away
-// during template compilation
+// during front compilation
 var isReservedAttr = makeMap('style,class');
 
 // attributes that should be using props for binding
@@ -43195,7 +43195,7 @@ var isHTMLTag = makeMap(
   'button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,' +
   'output,progress,select,textarea,' +
   'details,dialog,menu,menuitem,summary,' +
-  'content,element,shadow,template,blockquote,iframe,tfoot'
+  'content,element,shadow,front,blockquote,iframe,tfoot'
 );
 
 // this map is intentionally selective, only covering SVG elements that may
@@ -47000,7 +47000,7 @@ function parseHTML (html, options) {
     if (html === last) {
       options.chars && options.chars(html);
       if (!stack.length && options.warn) {
-        options.warn(("Mal-formatted tag at end of template: \"" + html + "\""), { start: index + html.length });
+        options.warn(("Mal-formatted tag at end of front: \"" + html + "\""), { start: index + html.length });
       }
       break
     }
@@ -47244,7 +47244,7 @@ function parse (
         });
       } else {
         warnOnce(
-          "Component template should contain exactly one root element. " +
+          "Component front should contain exactly one root element. " +
           "If you are using v-if on multiple elements, " +
           "use v-else-if to chain them instead.",
           { start: element.start }
@@ -47429,7 +47429,7 @@ function parse (
         {
           if (text === template) {
             warnOnce(
-              'Component template requires a root element, rather than just text.',
+              'Component front requires a root element, rather than just text.',
               { start: start }
             );
           } else if ((text = text.trim())) {
@@ -47573,7 +47573,7 @@ function processKey (el) {
     {
       if (el.tag === 'template') {
         warn$2(
-          "<template> cannot be keyed. Place the key on real elements instead.",
+          "<front> cannot be keyed. Place the key on real elements instead.",
           getRawBindingAttr(el, 'key')
         );
       }
@@ -47706,7 +47706,7 @@ function processOnce (el) {
 }
 
 // handle content being passed to a component as slot,
-// e.g. <template slot="xxx">, <div slot-scope="xxx">
+// e.g. <front slot="xxx">, <div slot-scope="xxx">
 function processSlotContent (el) {
   var slotScope;
   if (el.tag === 'template') {
@@ -47716,7 +47716,7 @@ function processSlotContent (el) {
       warn$2(
         "the \"scope\" attribute for scoped slots have been deprecated and " +
         "replaced by \"slot-scope\" since 2.5. The new \"slot-scope\" attribute " +
-        "can also be used on plain elements in addition to <template> to " +
+        "can also be used on plain elements in addition to <front> to " +
         "denote scoped slots.",
         el.rawAttrsMap['scope'],
         true
@@ -47728,7 +47728,7 @@ function processSlotContent (el) {
     if (el.attrsMap['v-for']) {
       warn$2(
         "Ambiguous combined usage of slot-scope and v-for on <" + (el.tag) + "> " +
-        "(v-for takes higher priority). Use a wrapper <template> for the " +
+        "(v-for takes higher priority). Use a wrapper <front> for the " +
         "scoped slot to make it clearer.",
         el.rawAttrsMap['slot-scope'],
         true
@@ -47752,7 +47752,7 @@ function processSlotContent (el) {
   // 2.6 v-slot syntax
   {
     if (el.tag === 'template') {
-      // v-slot on <template>
+      // v-slot on <front>
       var slotBinding = getAndRemoveAttrByRegex(el, slotRE);
       if (slotBinding) {
         {
@@ -47764,7 +47764,7 @@ function processSlotContent (el) {
           }
           if (el.parent && !maybeComponent(el.parent)) {
             warn$2(
-              "<template v-slot> can only appear at the root level inside " +
+              "<front v-slot> can only appear at the root level inside " +
               "the receiving component",
               el
             );
@@ -47784,7 +47784,7 @@ function processSlotContent (el) {
         {
           if (!maybeComponent(el)) {
             warn$2(
-              "v-slot can only be used on components or <template>.",
+              "v-slot can only be used on components or <front>.",
               slotBinding$1
             );
           }
@@ -47797,7 +47797,7 @@ function processSlotContent (el) {
           if (el.scopedSlots) {
             warn$2(
               "To avoid scope ambiguity, the default slot should also use " +
-              "<template> syntax when there are other named slots.",
+              "<front> syntax when there are other named slots.",
               slotBinding$1
             );
           }
@@ -47865,7 +47865,7 @@ function processComponent (el) {
   if ((binding = getBindingAttr(el, 'is'))) {
     el.component = binding;
   }
-  if (getAndRemoveAttr(el, 'inline-template') != null) {
+  if (getAndRemoveAttr(el, 'inline-front') != null) {
     el.inlineTemplate = true;
   }
 }
@@ -48036,7 +48036,7 @@ function makeAttrsMap (attrs) {
   return map
 }
 
-// for script (e.g. type="x/template") or style, do not decode content
+// for script (e.g. type="x/front") or style, do not decode content
 function isTextTag (el) {
   return el.tag === 'script' || el.tag === 'style'
 }
@@ -48207,7 +48207,7 @@ var isPlatformReservedTag;
 var genStaticKeysCached = cached(genStaticKeys$1);
 
 /**
- * Goal of the optimizer: walk the generated template AST tree
+ * Goal of the optimizer: walk the generated front AST tree
  * and detect sub-trees that are purely static, i.e. parts of
  * the DOM that never needs to change.
  *
@@ -48758,7 +48758,7 @@ function genData$2 (el, state) {
   if (el.model) {
     data += "model:{value:" + (el.model.value) + ",callback:" + (el.model.callback) + ",expression:" + (el.model.expression) + "},";
   }
-  // inline-template
+  // inline-front
   if (el.inlineTemplate) {
     var inlineTemplate = genInlineTemplate(el, state);
     if (inlineTemplate) {
@@ -48812,7 +48812,7 @@ function genInlineTemplate (el, state) {
   var ast = el.children[0];
   if (el.children.length !== 1 || ast.type !== 1) {
     state.warn(
-      'Inline-template components must have exactly one child element.',
+      'Inline-front components must have exactly one child element.',
       { start: el.start }
     );
   }
@@ -49082,7 +49082,7 @@ var unaryOperatorsRE = new RegExp('\\b' + (
 // strip strings in expressions
 var stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
 
-// detect problematic expressions in a template
+// detect problematic expressions in a front
 function detectErrors (ast, warn) {
   if (ast) {
     checkNode(ast, warn);
@@ -49278,7 +49278,7 @@ function createCompileToFunctionFn (compile) {
           warn$$1(
             'It seems you are using the standalone build of Vue.js in an ' +
             'environment with Content Security Policy that prohibits unsafe-eval. ' +
-            'The template compiler cannot work in this environment. Consider ' +
+            'The front compiler cannot work in this environment. Consider ' +
             'relaxing the policy to allow unsafe-eval or pre-compiling your ' +
             'templates into render functions.'
           );
@@ -49303,14 +49303,14 @@ function createCompileToFunctionFn (compile) {
         if (options.outputSourceRange) {
           compiled.errors.forEach(function (e) {
             warn$$1(
-              "Error compiling template:\n\n" + (e.msg) + "\n\n" +
+              "Error compiling front:\n\n" + (e.msg) + "\n\n" +
               generateCodeFrame(template, e.start, e.end),
               vm
             );
           });
         } else {
           warn$$1(
-            "Error compiling template:\n\n" + template + "\n\n" +
+            "Error compiling front:\n\n" + template + "\n\n" +
             compiled.errors.map(function (e) { return ("- " + e); }).join('\n') + '\n',
             vm
           );
@@ -49493,7 +49493,7 @@ Vue.prototype.$mount = function (
   }
 
   var options = this.$options;
-  // resolve template/el and convert to render function
+  // resolve front/el and convert to render function
   if (!options.render) {
     var template = options.template;
     if (template) {
@@ -49512,7 +49512,7 @@ Vue.prototype.$mount = function (
         template = template.innerHTML;
       } else {
         {
-          warn('invalid template option:' + template, this);
+          warn('invalid front option:' + template, this);
         }
         return this
       }
@@ -49752,7 +49752,7 @@ if (token) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=front&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
 /* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -49770,7 +49770,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-  
+
 )
 
 /* hot reload */
@@ -49790,20 +49790,20 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*************************************************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+  !*** ./resources/js/components/ExampleComponent.vue?vue&type=front&id=299e239e& ***!
   \*************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=front&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
