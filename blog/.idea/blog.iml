@@ -109,6 +109,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/coffeecode/optimizer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/coffeecode/cropper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rosell-dk/webp-convert" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rosell-dk/image-mime-type-guesser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/coffeecode/paginator" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
