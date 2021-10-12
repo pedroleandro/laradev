@@ -1,14 +1,12 @@
-$font-primary: 'Work Sans', Arial, sans-serif;
-
-
+$font-primary: 'Miriam Libre', sans-serif;
 
 // Overrides
-$grid-gutter-width: 40px !default; 
-$border-radius-base:  4px !default;
+$grid-gutter-width: 40px !default;
+$border-radius-base: 4px !default;
 $padding-base-vertical: 14px !default;
 
-$brand-primary: #EA9215 !default;
-$brand-secondary: #09C6AB !default;
+$brand-primary: #F46460 !default;
+$brand-secondary: #27b4a8 !default;
 
 $brand-white: #fff;
 $brand-black: #000;
@@ -54,16 +52,16 @@ $form-group-margin-bottom:       30px !default;
           border-radius: $radius;
 }
 @mixin flex() {
-	display: -webkit-box;      
-  	display: -moz-box;         
-  	display: -ms-flexbox;      
-  	display: -webkit-flex;     
-  	display: flex;             
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
 }
 @mixin flexwrap() {
 	flex-wrap: wrap;
-	-webkit-flex-wrap: wrap; 
-	-moz-flex-wrap: wrap; 
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
 }
 
 @font-face {
@@ -78,7 +76,7 @@ $form-group-margin-bottom:       30px !default;
 }
 
 @mixin icomoon() {
-	
+
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -90,10 +88,10 @@ $form-group-margin-bottom:       30px !default;
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
+
 }
 
-// Import 
+// Import
 @import 'bootstrap/mixins';
 @import 'bootstrap/variables';
 
@@ -102,7 +100,7 @@ $form-group-margin-bottom:       30px !default;
 
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 
@@ -121,9 +119,9 @@ body {
 	height: 100%;
 	@include transition(.5s);
 	.offcanvas & {
-		overflow: hidden;	
+		overflow: hidden;
 		position: absolute;
-		
+
 		&:after {
 			@include transition(2s);
 			position: absolute;
@@ -184,7 +182,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	.top-menu{
 		padding: 28px 0;
 	}
-	.top{		
+	.top{
 		padding: 7px 0;
 		margin-bottom: 0;
 		.num, .fh5co-social{
@@ -282,7 +280,7 @@ h1, h2, h3, h4, h5, h6, figure {
 						border-width: 8px;
 						margin-left: -8px;
 					}
-					
+
 					li {
 						display: block;
 						margin-bottom: 7px;
@@ -376,12 +374,12 @@ h1, h2, h3, h4, h5, h6, figure {
 		display: table;
 		text-align: center;
 		background: $brand-white;
-		
+
 		-webkit-box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
 		-moz-box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
 		box-shadow: 0px 14px 30px -15px rgba(0,0,0,0.75);
 		@include border-radius(50%);
-		
+
 		i {
 			text-align: center;
 			display: table-cell;
@@ -401,7 +399,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 	&:hover {
 		.overlay {
-			background: rgba(0, 0, 0, .7);		
+			background: rgba(0, 0, 0, .7);
 		}
 		a {
 			// position: relative;
@@ -410,7 +408,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			-ms-transform: scale(1.2);
 			-o-transform: scale(1.2);
 			transform: scale(1.2);
-			
+
 		}
 	}
 }
@@ -449,7 +447,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		@media screen and (max-width: $screen-sm) {
 			height: 600px;
 		}
-	}	
+	}
 
 	&.fh5co-cover-sm {
 		height: 600px;
@@ -464,7 +462,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			@media screen and (max-width: $screen-sm) {
 				height: 400px;
 			}
-		}	
+		}
 	}
 }
 
@@ -645,7 +643,7 @@ h1, h2, h3, h4, h5, h6, figure {
 				top: 0;
 				font-size: 18px;
 				color: $brand-primary;
-			}	
+			}
 		}
 	}
 }
@@ -690,7 +688,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			}
 			&.address {
 				&:before {
-					font-size: 30px;	
+					font-size: 30px;
 					content: "\e9d1";
 				}
 			}
@@ -795,7 +793,7 @@ h1, h2, h3, h4, h5, h6, figure {
 				transform: scale(1.1);
 
 				@media screen and (max-width: $screen-sm ) {
-					
+
 					-webkit-transform: scale(1.0);
 					-moz-transform: scale(1.0);
 					-o-transform: scale(1.0);
@@ -852,7 +850,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		figure{
 			margin-bottom: 10px;
 			@include inline-block;
-			
+
 			img {
 				width: 100px;
 				@include border-radius(50%);
@@ -868,7 +866,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			@media screen and (max-width: $screen-md) {
 				width: 100%;
 			}
-			
+
 		}
 
 	}
@@ -902,8 +900,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
 .bs-wizard > .bs-wizard-step .bs-wizard-stepnum { font-size: 16px; margin-bottom: 10px;}
 .bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px; padding: 20px;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #fbe8aa; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
 .bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 22px 0;}
 .bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #fbe8aa;}
 .bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
@@ -932,7 +930,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		right: 0;
 		background: rgba($brand-black,.7);
 	}
-	
+
 	.fh5co-heading {
 		h2 {
 			color: $brand-white;
@@ -956,15 +954,15 @@ h1, h2, h3, h4, h5, h6, figure {
 		}
 
 		&:-moz-placeholder { /* Firefox 18- */
-		   color: $brand-white;  
+		   color: $brand-white;
 		}
 
 		&::-moz-placeholder {  /* Firefox 19+ */
-		   color: $brand-white;  
+		   color: $brand-white;
 		}
 
-		&:-ms-input-placeholder {  
-		   color: $brand-white;  
+		&:-ms-input-placeholder {
+		   color: $brand-white;
 		}
 		@include transition(.5s);
 		&:focus {
@@ -1063,7 +1061,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	@include border-radius(5px);
 	margin-bottom: 40px;
 	position: relative;
-	
+
 
 	&.popular{
 		.btn-select-plan{
@@ -1089,7 +1087,7 @@ h1, h2, h3, h4, h5, h6, figure {
     		margin: 0;
     		font-size: 16px;
     		padding: 8px 10px;
-    		
+
     		&.color{
     			background: rgba($brand-black,.04);
     		}
@@ -1137,7 +1135,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	background: #efefef;
 	.fh5co-footer-links {
 		padding: 0;
-		margin: 0;	
+		margin: 0;
 		li {
 			padding: 0;
 			margin: 0;
@@ -1288,7 +1286,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			text-decoration: none;
 			outline: none;
 		}
-	}	
+	}
 }
 
 
