@@ -1,70 +1,73 @@
 <footer id="fh5co-footer" role="contentinfo">
     <div class="container">
         <div class="row row-pb-md">
+
             <div class="col-md-3 fh5co-widget">
-                <h4>About Learning</h4>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci
-                    architecto culpa amet.</p>
+                <h4>Sobre a escola</h4>
+                <p>Desde 2010 a UpInside vem criando os melhores cursos do mercado, entregamos ao aluno conhecimento
+                    prático e testado sem enrolação.</p>
             </div>
+
             <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                <h4>Learning</h4>
+                <h4>Páginas</h4>
                 <ul class="fh5co-footer-links">
-                    <li><a href="#">Course</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Meetups</a></li>
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('course') }}">O Curso</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a href="{{ route('contact') }}">Contato</a></li>
+                    <li><a href="#"><span>Login</span></a></li>
                 </ul>
             </div>
 
             <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                <h4>Learn &amp; Grow</h4>
+                <h4>Links Importantes</h4>
                 <ul class="fh5co-footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Handbook</a></li>
-                    <li><a href="#">Held Desk</a></li>
+                    <li><a href="#">UpInside</a></li>
+                    <li><a href="#">Laravel</a></li>
                 </ul>
             </div>
 
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                <h4>Engage us</h4>
+            <div class="col-md-4 col-sm-8 col-xs-12 col-md-push-1">
+                <h4>Precisa de ajuda?</h4>
                 <ul class="fh5co-footer-links">
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Visual Assistant</a></li>
-                    <li><a href="#">System Analysis</a></li>
-                    <li><a href="#">Advertise</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-                <h4>Legal</h4>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Find Designers</a></li>
-                    <li><a href="#">Find Developers</a></li>
-                    <li><a href="#">Teams</a></li>
-                    <li><a href="#">Advertise</a></li>
-                    <li><a href="#">API</a></li>
+                    <li><p>Entre em contato com nossa equipe de suporte comercial nos canais abaixo:</p></li>
+                    <li><a href="mailto:{{ env('MAIL_FROM_ADDRESS') }}">{{ env('MAIL_FROM_ADDRESS') }}</a></li>
+                    <li><p>{{ env('CLIENT_DATA_TELEPHONE') }}</p></li>
                 </ul>
             </div>
         </div>
 
         <div class="row copyright">
             <div class="col-md-12 text-center">
+
                 <p>
-                    <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-                    <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
-                        Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                    <small class="block">&copy; {{ date('Y') }} UpInside Treinamentos. Todos os Direitos Reservados.
+                    </small>
+                    <small class="block">
+                        <a href="https://www.upinside.com.br/termos" target="_blank">Termos de Uso</a>
+                    </small>
                 </p>
+
                 <p>
                 <ul class="fh5co-social-icons">
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                    <li>
+                        <a href="{{ env('CLIENT_DATA_LINK_FACEBOOK') }}" target="_blank">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ env('CLIENT_DATA_LINK_TWITTER') }}" target="_blank">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ env('CLIENT_DATA_LINK_GITHUB') }}" target="_blank">
+                            <i class="icon-github"></i>
+                        </a>
+                    </li>
                 </ul>
                 </p>
+
             </div>
         </div>
 
