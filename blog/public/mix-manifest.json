@@ -1,4 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/front/asset/css/vendor.css": "/front/asset/css/vendor.css",
+    "/front/asset/js/modernizr.js": "/front/asset/js/modernizr.js",
+    "/front/asset/js/respond.min.js": "/front/asset/js/respond.min.js",
+    "/front/asset/js/vendor.js": "/front/asset/js/vendor.js",
+    "/front/asset/js/main.js": "/front/asset/js/main.js"
 }

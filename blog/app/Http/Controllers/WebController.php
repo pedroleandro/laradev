@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\Seo;
-use CoffeeCode\Optimizer\Optimizer;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
