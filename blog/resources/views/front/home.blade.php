@@ -276,7 +276,7 @@
 
                     @foreach($posts as $post)
 
-{{--                        <p>{{ \Illuminate\Support\Facades\Storage::url(\App\Support\Cropper::thumb($post->cover, 800, 450)) }}</p>--}}
+{{--                        <p>{{ var_dump(\Illuminate\Support\Facades\Storage::url(\App\Support\Cropper::thumb($post->cover, 800, 450))) }}</p>--}}
 
                         <div class="col-lg-4 col-md-4">
                             <div class="fh5co-blog animate-box">
